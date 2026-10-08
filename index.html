@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Saya</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container navbar-container">
+            <a href="#" class="logo">Porto<span>folio.</span></a>
+            <nav class="nav-links" id="navLinks">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <!-- Theme Toggle Button -->
+                <button id="themeToggle" class="theme-btn" aria-label="Ganti Tema">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <!-- Hamburger Menu for Mobile -->
+                <button class="hamburger" id="hamburger" aria-label="Menu Navigasi">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="badge">Selamat datang di portofolio saya</span>
+                <h1 class="hero-title">Halo, Saya <span id="profileName">Cahyani R. U.</span></h1>
+                <h2 class="hero-subtitle" id="profileRole">Full Stack Web Developer</h2>
+                <p class="hero-description" id="profileBio">
+                    Saya berfokus pada pembuatan aplikasi web modern yang cepat, responsif, dan mudah digunakan. Terbiasa membangun antarmuka interaktif serta logika aplikasi yang andal.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary">Lihat Proyek</a>
+                    <a href="#contact" class="btn btn-outline">Hubungi Saya</a>
+                </div>
+            </div>
+            <div class="hero-image-container">
+                <div class="hero-blob"></div>
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop" alt="Foto Profil" class="hero-image" id="profileImage">
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Latar Belakang</span>
+                <h2 class="section-title">Tentang Saya</h2>
+                <div class="line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-info card">
+                    <h3>Siapa Saya</h3>
+                    <p>
+                        Saya adalah seorang pengembang web yang antusias menciptakan pengalaman digital yang bermanfaat. Senang mempelajari teknologi baru dan mengubah ide menjadi kode yang bersih serta terstruktur.
+                    </p>
+                    <p>
+                        Dengan pendekatan berorientasi pada kepuasan pengguna, saya selalu memastikan setiap proyek memiliki performa yang baik dan tampilan yang memikat di berbagai perangkat.
+                    </p>
+                    <div class="info-details">
+                        <div class="info-item">
+                            <strong>Lokasi:</strong>
+                            <span>Makassar, Indonesia</span>
+                        </div>
+                        <div class="info-item">
+                            <strong>Pengalaman:</strong>
+                            <span>2+ Tahun</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-skills card">
+                    <h3>Keahlian & Teknologi</h3>
+                    <div class="skills-grid" id="skillsGrid">
+                        <div class="skill-tag"><i class="fab fa-html5"></i> HTML5</div>
+                        <div class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</div>
+                        <div class="skill-tag"><i class="fab fa-js"></i> JavaScript</div>
+                        <div class="skill-tag"><i class="fab fa-react"></i> React</div>
+                        <div class="skill-tag"><i class="fab fa-node-js"></i> Node.js</div>
+                        <div class="skill-tag"><i class="fas fa-database"></i> Database</div>
+                        <div class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+                        <div class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Koleksi Karya</span>
+                <h2 class="section-title">Proyek Pilihan</h2>
+                <div class="line"></div>
+                <p class="section-desc">
+                    Proyek di bawah ini disimpan dan dimuat secara otomatis menggunakan <strong>Local Storage</strong>. Anda dapat menambah, mengedit, atau menghapus proyek dan datanya akan tetap tersimpan saat halaman dimuat ulang.
+                </p>
+            </div>
+
+            <!-- Projects Grid (Rendered by JS from Local Storage) -->
+            <div class="projects-grid" id="projectsContainer"></div>
+
+            <!-- Local Storage Project Manager Form -->
+            <div class="project-manager card">
+                <div class="manager-header">
+                    <h3><i class="fas fa-tools"></i> Kelola Proyek (Fitur Local Storage)</h3>
+                    <p>Tambahkan proyek baru Anda untuk menguji penyimpanan data langsung di browser (Local Storage).</p>
+                </div>
+                <form id="projectForm" class="manager-form">
+                    <input type="hidden" id="editIndex" value="-1">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projTitle">Judul Proyek <span class="required">*</span></label>
+                            <input type="text" id="projTitle" required placeholder="Contoh: Aplikasi Toko Online">
+                        </div>
+                        <div class="form-group">
+                            <label for="projCategory">Kategori <span class="required">*</span></label>
+                            <select id="projCategory" required>
+                                <option value="Web Development">Web Development</option>
+                                <option value="Mobile App">Mobile App</option>
+                                <option value="UI/UX Design">UI/UX Design</option>
+                                <option value="Other">Lainnya</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="projDesc">Deskripsi <span class="required">*</span></label>
+                        <textarea id="projDesc" rows="3" required placeholder="Jelaskan fitur utama, teknologi yang digunakan, dll..."></textarea>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="projImage">URL Gambar (Opsional)</label>
+                            <input type="url" id="projImage" placeholder="https://images.unsplash.com/...">
+                        </div>
+                        <div class="form-group">
+                            <label for="projLink">Tautan Proyek (Opsional)</label>
+                            <input type="url" id="projLink" placeholder="https://github.com/username/project">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" id="submitBtn" class="btn btn-primary"><i class="fas fa-plus"></i> Tambah Proyek</button>
+                        <button type="button" id="cancelEditBtn" class="btn btn-outline" style="display: none;">Batal Edit</button>
+                        <button type="button" id="resetProjectsBtn" class="btn btn-danger-outline"><i class="fas fa-undo"></i> Reset ke Data Awal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="sub-title">Hubungi Saya</span>
+                <h2 class="section-title">Kontak & Pesan</h2>
+                <div class="line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card card">
+                        <div class="icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="text-box">
+                            <h4>Email</h4>
+                            <p>cahyanirezkiutami@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="info-card card">
+                        <div class="icon-box">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="text-box">
+                            <h4>Telepon / WhatsApp</h4>
+                            <p>+62 81936411532</p>
+                        </div>
+                    </div>
+                    <div class="info-card card">
+                        <div class="icon-box">
+                            <i class="fab fa-linkedin-in"></i>
+                        </div>
+                        <div class="text-box">
+                            <h4>LinkedIn</h4>
+                            <p>linkedin.com/in/cahyanirezkiutami</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-container card">
+                    <h3>Kirim Pesan</h3>
+                    <p class="form-notice">Pesan yang dikirim akan disimpan ke <strong>Local Storage</strong> browser.</p>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="contactName">Nama <span class="required">*</span></label>
+                            <input type="text" id="contactName" required placeholder="Nama Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email <span class="required">*</span></label>
+                            <input type="email" id="contactEmail" required placeholder="email@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Pesan <span class="required">*</span></label>
+                            <textarea id="contactMessage" rows="4" required placeholder="Tuliskan pesan Anda di sini..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Kirim Pesan <i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div id="formSuccess" class="alert alert-success" style="display: none;">
+                        <i class="fas fa-check-circle"></i> Pesan berhasil disimpan ke Local Storage!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Saved Messages Panel (Local Storage Demo) -->
+            <div class="messages-panel card" id="messagesPanel" style="display: none;">
+                <div class="panel-header">
+                    <h3><i class="fas fa-envelope-open-text"></i> Pesan Masuk (Tersimpan di Local Storage)</h3>
+                    <button id="clearMessagesBtn" class="btn btn-danger-sm"><i class="fas fa-trash"></i> Hapus Semua Pesan</button>
+                </div>
+                <div class="messages-list" id="messagesList"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <p>&copy; 2026 Porto<span>folio.</span> Dibuat dengan HTML, CSS & JavaScript.</p>
+            <div class="social-icons">
+                <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript File -->
+    <script src="app.js"></script>
+</body>
+</html>
